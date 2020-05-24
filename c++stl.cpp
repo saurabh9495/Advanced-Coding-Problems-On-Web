@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <set>
+#include <map>
 using namespace std;
 
 bool f(int x, int y)
@@ -80,12 +81,83 @@ void setDemo()
     {
         cout << y << " ";
     }
+
+    auto fi = s.find(-27);
+    if (fi == s.end())
+    {
+        cout << endl
+             << "Not present" << endl;
+    }
+    else
+    {
+        cout << endl
+             << "Present" << *fi << endl;
+    }
+    auto fi2 = s.lower_bound(-27);
+    auto fi3 = s.upper_bound(-27);
+    cout << *fi2 << " " << *fi3 << endl;
+
+    auto fi4 = s.upper_bound(36);
+    if (fi4 == s.end())
+    {
+        cout << "Unable to find something like that";
+    }
 }
 
+void mapDemo()
+{
+    map<int, int> C;
+    C[1] = 100;
+    C[2] = 200;
+    C[3] = 300;
+    C[4] = 400;
+    C[5] = 500;
+
+    map<char, int> D;
+    string s = "Saurabh Kumar";
+    for (char c : s)
+    {
+        D[c]++;
+    }
+    cout << D['a'] << " " << D['r'] << endl;
+}
+
+void awesomestl()
+{
+    // add [1,10];
+    // add [11, 99];
+    // add [101, 199];
+    set<pair<int, int>> S;
+    S.insert({1, 10});
+    S.insert({11, 99});
+    S.insert({101, 199});
+
+    int pt = 20;
+    auto it = S.upper_bound({pt, INT64_MAX});
+    if (it == S.begin())
+    {
+        cout << "the given point's not lying around";
+        return;
+    }
+    it--;
+    pair<int, int> current = *it;
+    if (current.first <= pt && pt <= current.second)
+    {
+        cout << "yes it's present " << current.first << " " << current.second << endl;
+    }
+    else
+    {
+        cout << "the given point is not lying around";
+    }
+}
 int main()
 {
     //Vector Examples
     // vectorDemo();
     //Set Examples
-    setDemo();
+    // setDemo();
+    //Map Examples
+    // mapDemo();
+    // awesomestl
+    awesomestl();
 }
