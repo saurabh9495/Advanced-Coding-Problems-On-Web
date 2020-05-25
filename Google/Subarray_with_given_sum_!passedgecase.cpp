@@ -18,30 +18,38 @@ int main()
         int j = 0, k = 0;
         for (j = 0; j < noe; j++)
         {
-            int target = 0;
-            for (k = j; k < noe; k++)
+            target += v[j];
+            if (target == sum)
             {
-                target += v[k];
-                if (target > sum)
-                {
-                    break;
-                }
-                if (target == sum)
-                {
-                    flag = true;
-                    cout << j + 1 << " " << k + 1 << endl;
-                    break;
-                }
+                cout << 1 << " " << j + 1 << endl;
+                flag = false;
+                break;
             }
-            if (flag)
+            else if (target > sum)
             {
                 break;
             }
         }
-        if (flag == false)
+        for (k = 0; k < j; k++)
+        {
+            target -= v[k];
+            if (target == sum)
+            {
+                cout << k + 2 << " " << j + 1 << endl;
+                flag = false;
+                break;
+            }
+        }
+        if (flag)
         {
             cout << -1 << endl;
         }
-        return 1;
     }
+    return 0;
 }
+
+/*input
+1
+5 12 
+1 2 3 7 5
+*/
