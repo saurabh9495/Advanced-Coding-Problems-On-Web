@@ -14,6 +14,7 @@ void vectorDemo()
 {
     //C++ stl
     vector<int> A = {11, 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+    // cout << *max_element(A.begin(),A.end()) << endl;
     cout << A[1] << endl;
     sort(A.begin(), A.end());
     bool present = binary_search(A.begin(), A.end(), 43);
