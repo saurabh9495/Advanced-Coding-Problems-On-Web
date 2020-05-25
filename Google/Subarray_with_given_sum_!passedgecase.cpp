@@ -47,9 +47,3 @@ int main()
     }
     return 0;
 }
-
-/*input
-1
-5 12 
-1 2 3 7 5
-*/

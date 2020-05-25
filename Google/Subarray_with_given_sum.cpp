@@ -7,7 +7,7 @@ int main()
     cin >> test_cases;
     for (int i = 0; i < test_cases; i++)
     {
-        bool flag = true;
+        bool flag = false;
         int noe, sum, target = 0;
         cin >> noe >> sum;
         vector<int> v(noe);
@@ -42,6 +42,6 @@ int main()
         {
             cout << -1 << endl;
         }
-        return 1;
     }
+    return 0;
 }
