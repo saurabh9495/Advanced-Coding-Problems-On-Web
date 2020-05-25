@@ -4,21 +4,25 @@
 #include <algorithm>
 using namespace std;
 
-int main() {
-	int testcases, noe;
-	cin >> testcases;
-	for(int i=0;i<testcases;i++){
-	    cin >> noe;
-	    int noe_all;
-	    noe_all = 2*noe +2;
-	    vector<int> v(noe);
-        set<int> s;
+int main()
+{
+    int testcases;
+    cin >> testcases;
+    for (int i = 0; i < testcases; i++)
+    {
+        int noe, noe_all;
+        cin >> noe;
+        noe_all = 2 * noe + 2;
+        vector<int> v;
+        vector<int> w;
         for (int i = 0; i < noe_all; i++)
         {
-            cin >> v[i];
+            int x;
+            cin >> x;
+            v.push_back(x);
         }
-        sort(v.begin(), v.end());        
-        for (int j = 0; j < noe_all - 1; j++)
+        sort(v.begin(), v.end());
+        for (int j = 0; j < v.size(); j++)
         {
             if (v[j] == v[j + 1])
             {
@@ -26,15 +30,15 @@ int main() {
             }
             else
             {
-                s.insert(v[j]);
+                w.push_back(v[j]);
             }
         }
-        for (int x : s)
+        sort(w.begin(), w.end());
+        for (int l = 0; l < w.size(); l++)
         {
-            cout << x << " ";
+            cout << w[l] << " ";
         }
         cout << endl;
-        
-	}
-	return 0;
+    }
+    return 0;
 }
