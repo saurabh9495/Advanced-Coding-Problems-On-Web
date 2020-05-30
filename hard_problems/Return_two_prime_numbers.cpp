@@ -4,9 +4,9 @@ typedef long long int lli;
 
 bool isPrime(int a)
 {
-    for (int j = 2; j < a; j++)
+    for (int k = 2; k < a; k++)
     {
-        if (a % j == 0)
+        if (a % k == 0)
             return 0;
     }
     return 1;
@@ -19,6 +19,7 @@ int main()
     for (lli i = 0; i < test_cases; i++)
     {
         lli number;
+        cin >> number;
         for (lli j = 3; j < number; j = j + 2)
         {
             if (isPrime(j) == 1 && isPrime(number - j) == 1)
