@@ -1,3 +1,5 @@
+// code for finding the numbers
+
 #include <iostream>
 #include <vector>
 #include <set>
