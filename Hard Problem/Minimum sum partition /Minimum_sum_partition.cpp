@@ -3,7 +3,7 @@
 using namespace std;
 typedef long long int lli;
 
-int func(vector<lli> &V, lli s, lli e, lli sum, lli cur, vector<vector<lli>> &dp)
+int func(vector<lli> &V, lli s, lli e, lli sum, lli cur, vector<vector<lli> > &dp)
 {
     if (s > e)
     {
@@ -35,7 +35,7 @@ int main()
             cin >> v[j];
             sum += v[j];
         }
-        vector<vector<lli>> dp(sum + 2, vector<lli>(noe + 2, -1));
+        vector<vector<lli> > dp(sum + 2, vector<lli>(noe + 2, -1));
         cout << func(v, 0, noe - 1, sum, 0, dp) << endl;
     }
     return 0;
