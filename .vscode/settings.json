@@ -17,6 +17,8 @@
         "type_traits": "cpp",
         "stack": "cpp",
         "sstream": "cpp",
-        "cmath": "cpp"
+        "cmath": "cpp",
+        "iosfwd": "cpp",
+        "iterator": "cpp"
     }
 }
