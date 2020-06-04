@@ -3,6 +3,17 @@
 using namespace std;
 typedef long long int lli;
 
+// Input:
+// 2
+// 4
+// 1 6 5 11
+// 4
+// 36 7 46 40
+
+// Output : 
+// 1
+// 23
+
 int func(vector<lli> &V, lli s, lli e, lli sum, lli cur, vector<vector<lli> > &dp)
 {
     if (s > e)
